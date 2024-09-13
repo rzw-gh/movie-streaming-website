@@ -119,12 +119,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function initializeCarousels() {
         const carousels = document.querySelectorAll('.af-carousel');
         carousels.forEach((carousel, index) => {
-            let carouselWrapper = carousel.parentElement
-            initiateSingleSlider(carousel, carouselWrapper, index);
+            let carouselID = carousel.getAttribute('data-carousel')
+            initiateSingleSlider(carousel, carouselID, index);
         });
     }
 
-    function initiateSingleSlider(carousel, carouselWrapper, index) {
+    function initiateSingleSlider(carousel, carouselID, index) {
         const bodyDirection = document.documentElement.getAttribute('dir');
         const slides = carousel.children;
         let slidesGap;
@@ -146,15 +146,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const totalWidthPercentage = slideWidthPercentage * totalSlides - gapWidthPercentage;
         const visibleSlides = carousel.clientWidth / (itemWidth + slidesGap);
 
-        const navigationWrapper = carouselWrapper.nextElementSibling;
+        const nextButton = document.querySelector("#"+carouselID+"-next");
+        const prevButton = document.querySelector("#"+carouselID+"-prev");
         if (slides.length <= visibleSlides) {
-            navigationWrapper.classList.add("hidden");
+            nextButton.classList.add("hidden");
+            prevButton.classList.add("hidden");
         } else {
             let currentTranslation = 0;
-
-            const nextButton = navigationWrapper.querySelector('.carousel-next');
-            const prevButton = navigationWrapper.querySelector('.carousel-prev');
-
             nextButton.addEventListener('click', () => {
                 if (bodyDirection === "rtl") {
                     if (currentTranslation < (totalWidthPercentage - slideWidthPercentage * visibleSlides)) {
