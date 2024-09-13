@@ -1053,10 +1053,6 @@ body {
   max-width: 14ch;
 }
 
-.custom-truncate-r--25 {
-  max-width: 25ch;
-}
-
 .show-rate-progress-circle {
   position: relative;
   width: 32px;
@@ -1479,6 +1475,10 @@ body {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[16px\] {
+  height: 16px;
 }
 
 .min-h-screen {
@@ -2330,10 +2330,6 @@ body {
   line-height: 1rem;
 }
 
-.text-\[6px\] {
-  font-size: 6px;
-}
-
 .tracking-normal {
   letter-spacing: 0em;
 }
@@ -2573,18 +2569,6 @@ body {
   .sm\:custom-truncate-r--25 {
     max-width: 25ch;
   }
-
-  .sm\:custom-truncate-r--48 {
-    max-width: 48ch;
-  }
-
-  .sm\:custom-truncate-r--60 {
-    max-width: 60ch;
-  }
-
-  .sm\:custom-truncate-r--200 {
-    max-width: 200ch;
-  }
 }
 
 @media (min-width: 768px) {
@@ -2789,6 +2773,10 @@ body {
   line-height: 1.75rem;
 }
 
+.child\:text-\[12px\] > * {
+  font-size: 12px;
+}
+
 .child\:leading-10 > * {
   line-height: 2.5rem;
 }
@@ -2884,18 +2872,19 @@ body {
 }
 
 @media (min-width: 640px) {
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
-  .sm\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .child\:sm\:text-base > * {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -2968,10 +2957,6 @@ body {
     width: 55px;
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:gap-x-4 {
     -moz-column-gap: 1rem;
          column-gap: 1rem;
@@ -3020,10 +3005,6 @@ body {
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:gap-x-6 {
