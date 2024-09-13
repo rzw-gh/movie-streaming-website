@@ -538,6 +538,89 @@
         <svg class="w-4 md:w-5 h-6 md:h-7 button-hover flex-shrink-0" onclick="window.location.href='watch-list.html'">
             <use href="#save"></use>
         </svg>
+        <!-- profile -->
+        <div class="relative flex flex-shrink-0 items-center gap-x-2.5 group hover:cursor-pointer">
+            <img class="rounded-full w-[35px] md:w-[45px] h-[35px] md:h-[45px]" src="images/profile/01.png" alt="Profile Picture">
+            <svg class="w-[12px] md:w-[18px] h-[6px] md:h-[10px] group-hover:custom-group-hover">
+                <use href="#drop"></use>
+            </svg>
+            <!-- profile cart -->
+            <div class="absolute flex flex-col justify-center left-0 top-[60px] gap-y-5 dark:bg-af-black-light/60 bg-af-white dark:text-af-white-light text-af-black-light shadow-af tracking-normal divide-y-[1px] divide-af-black-light/50 dark:divide-af-white-light/50 invisible group-hover:visible transition-all">
+                <div class="flex flex-col gap-y-2 px-3 pt-5 items-center">
+                    <img class="rounded-full w-24 h-24" src="images/profile/01.png" alt="Profile Picture">
+                    <span>نام کاربری</span>
+                    <a href="subscription.html"
+                       class="flex justify-center items-center gap-x-1.5 w-48 h-8 text-sm px-2.5 py-2 bg-af-primary hover:text-af-black-light hover:shadow-af text-af-white-light rounded-2xl">
+                        <svg class="w-4 h-4">
+                            <use href="#crown"></use>
+                        </svg>
+                        <p class="text-sm">خرید اشتراک</p>
+                    </a>
+                </div>
+                <div class="flex flex-col justify-start gap-4 pt-5 px-3">
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-4 h-[22px]">
+                            <use href="#save"></use>
+                        </svg>
+                        <span>لیست تماشا</span>
+                    </div>
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-[18px] h-[18px]">
+                            <use href="#history"></use>
+                        </svg>
+                        <span>تاریخچه تماشا</span>
+                    </div>
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-[18px] h-[20px]">
+                            <use href="#bell"></use>
+                        </svg>
+                        <span>اعلانات</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-start gap-4 pt-5 px-3">
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-5 h-5">
+                            <use href="#star"></use>
+                        </svg>
+                        <span>جوایز</span>
+                    </div>
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-[18px] h-[18px]">
+                            <use href="#gift"></use>
+                        </svg>
+                        <span>کد تخفیف</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-start gap-4 pt-5 px-3">
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-[18px] h-5">
+                            <use href="#gear"></use>
+                        </svg>
+                        <span>تنظیمات</span>
+                    </div>
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-[18px] h-[19px]">
+                            <use href="#support"></use>
+                        </svg>
+                        <span>پشتیبانی</span>
+                    </div>
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-5 h-5">
+                            <use href="#question"></use>
+                        </svg>
+                        <span>سوالات متداول</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-start mb-5 gap-4 pt-5 px-3">
+                    <div class="flex items-center gap-x-4 button-hover">
+                        <svg class="w-5 h-5">
+                            <use href="#logout"></use>
+                        </svg>
+                        <span>خروج</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
