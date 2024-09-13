@@ -266,7 +266,7 @@
     <nav class="flex gap-x-9">
         <!-- logo -->
         <div>
-            <img src="images/logo/nav-logo.svg" class="cursor-pointer" alt="nav-logo">
+            <img onclick="window.location.href='home.html'" src="images/logo/nav-logo.svg" class="cursor-pointer" alt="nav-logo">
         </div>
 
         <!-- navigation -->
@@ -417,13 +417,13 @@
     <div class="flex justify-start items-center gap-x-5 dark:text-af-white-light">
         <!-- hamburger icon -->
         <div id="mobile-menu-open-btn" class="shrink-0">
-            <svg class="w-[29px] h-[18px] button-hover">
+            <svg class="w-[23px] md:w-[29px] h-[12px] md:h-[18px] button-hover">
                 <use href="#hamburger"></use>
             </svg>
         </div>
         <!-- logo -->
-        <div class="shrink-0">
-            <img src="images/logo/nav-logo.svg" class="cursor-pointer" alt="nav-logo">
+        <div class="shrink-0 w-[45px] md:w-[55px] h-[45px] md:h-[55px]">
+            <img onclick="window.location.href='home.html'" src="images/logo/nav-logo.svg" class="cursor-pointer" alt="nav-logo">
         </div>
     </div>
 
@@ -525,26 +525,26 @@
     <div class="flex items-center gap-x-8 dark:text-af-white-light">
         <!-- search -->
         <div class="flex-shrink-0">
-            <svg class="w-7 h-7 button-hover">
+            <svg class="w-5 md:w-7 h-5 md:h-7 button-hover">
                 <use href="#search"></use>
             </svg>
         </div>
         <!-- theme -->
-        <svg class="w-8 h-8 button-hover flex-shrink-0" id="toggle-theme">
+        <svg class="w-6 md:w-8 h-6 md:h-8 button-hover flex-shrink-0" id="toggle-theme">
             <use href="#sun"></use>
         </svg>
         <!-- saved -->
-        <svg class="w-5 h-7 button-hover flex-shrink-0" onclick="window.location.href='watch-list.html'">
+        <svg class="w-4 md:w-5 h-6 md:h-7 button-hover flex-shrink-0" onclick="window.location.href='watch-list.html'">
             <use href="#save"></use>
         </svg>
         <!-- profile -->
         <div class="relative flex flex-shrink-0 items-center gap-x-2.5 group hover:cursor-pointer">
-            <img class="rounded-full w-[45px] h-[45px]" src="images/profile/01.png" alt="Profile Picture">
-            <svg class="w-[18px] h-[10px] group-hover:custom-group-hover">
+            <img class="rounded-full w-[35px] md:w-[45px] h-[35px] md:h-[45px]" src="images/profile/01.png" alt="Profile Picture">
+            <svg class="w-[12px] md:w-[18px] h-[6px] md:h-[10px] group-hover:custom-group-hover">
                 <use href="#drop"></use>
             </svg>
             <!-- profile cart -->
-            <div class="absolute flex flex-col justify-center left-0 top-[60px] gap-y-5 dark:bg-af-black-light/60 bg-af-white/60 dark:text-af-white-light text-af-black-light backdrop-blur-md shadow-af tracking-normal divide-y-[1px] divide-af-black-light/50 dark:divide-af-white-light/50 invisible group-hover:visible transition-all">
+            <div class="absolute flex flex-col justify-center left-0 top-[60px] gap-y-5 dark:bg-af-black-light/60 bg-af-white dark:text-af-white-light text-af-black-light shadow-af tracking-normal divide-y-[1px] divide-af-black-light/50 dark:divide-af-white-light/50 invisible group-hover:visible transition-all">
                 <div class="flex flex-col gap-y-2 px-3 pt-5 items-center">
                     <img class="rounded-full w-24 h-24" src="images/profile/01.png" alt="Profile Picture">
                     <span>نام کاربری</span>
@@ -747,9 +747,9 @@
 
 <!-- footer -->
 <footer class="mt-auto">
-    <div class="flex flex-col justify-between bottom-0 py-5 h-[145px] px-[50px] bg-af-white-light dark:bg-af-black-light shadow-af-l">
-        <!-- links & social -->
-        <div class="flex justify-between">
+    <div class="flex flex-col gap-y-5 justify-between bottom-0 py-5 px-[50px] bg-af-white-light dark:bg-af-black-light shadow-af-l">
+        <!-- links & social desktop -->
+        <div class="hidden lg:flex justify-between">
             <!-- links -->
             <div class="flex items-center justify-center gap-x-6 text-af-black-light dark:text-af-white child:button-hover child:text-lg">
                 <svg id="scrollToTopBtn" class="w-8 h-8">
@@ -776,12 +776,46 @@
                 </div>
             </div>
         </div>
+
+        <!-- links & social mobile -->
+        <div class="flex flex-col gap-y-10 lg:hidden justify-between">
+            <!-- links -->
+            <div class="grid grid-cols-2 gap-y-3 gap-x-6 text-af-black-light dark:text-af-white child:button-hover child:text-lg">
+                <span>پشتیبانی</span>
+                <span>قوانین و سوالات متداول</span>
+                <span>وضعیت سرویس ها</span>
+                <span>خرید اشتراک</span>
+                <span>حساب کاربری</span>
+                <span>DMCA</span>
+            </div>
+            <!-- social -->
+            <div class="flex items-center justify-center gap-x-4">
+                <div class="rounded-xl p-2 bg-[#D9D9D9]/80 dark:bg-[#D9D9D9]/10 text-af-black-light dark:text-af-white-light hover:cursor-pointer dark:hover:text-af-primary hover:text-af-primary transition-colors">
+                    <svg class="w-[25px] h-[21px]">
+                        <use href="#telegram"></use>
+                    </svg>
+                </div>
+                <div class="rounded-xl p-2 bg-[#D9D9D9]/80 dark:bg-[#D9D9D9]/10 text-af-black-light dark:text-af-white-light hover:cursor-pointer dark:hover:text-af-primary hover:text-af-primary transition-colors">
+                    <svg class="w-[23px] h-[23px]">
+                        <use href="#instagram"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
         <!-- copyright -->
         <div class="flex items-center gap-x-1 justify-center text-af-black-light dark:text-af-white-light text-center">
             <img src="images/logo/footer-logo.png" class="w-12 h-12" alt="logo">
-            <div class="mt-[25px]">
-                <span>کلیه حقوق این سایت متعلق به انی فاکس میباشد. طراحی و اجرا توسط  </span>
-                <span class="text-af-primary"><a href="https://www.kariaco.ir" target="_blank">Karia</a></span>
+            <div class="mt-[25px] hidden lg:flex items-center">
+                <span class="text-base">کلیه حقوق این سایت متعلق به انی فاکس میباشد. طراحی و اجرا توسط</span>
+                <span class="text-af-primary text-base"><a href="https://www.kariaco.ir" target="_blank">&nbsp;Karia</a></span>
+            </div>
+            <div class="mt-[25px] flex flex-col lg:hidden items-center">
+                <span class="lg:text-base text-sm">کلیه حقوق این سایت متعلق به انی فاکس میباشد.</span>
+                <div>
+                    <span class="text-sm">طراحی و اجرا توسط</span>
+                    <span class="text-af-primary text-xs"><a href="https://www.kariaco.ir" target="_blank">&nbsp;Karia</a></span>
+                </div>
             </div>
         </div>
     </div>
