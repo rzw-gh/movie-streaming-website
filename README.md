@@ -1,5 +1,5 @@
 # Anime, Movie Streaming website
-![image](https://github.com/user-attachments/assets/f045d6f2-5bf0-4100-9862-3d50c658a31b)
+![image](https://github.com/user-attachments/assets/da352c07-315d-40a5-a0c2-6cdbb3bfc118)
 
 this is a web application built using Tailwindcss
 
