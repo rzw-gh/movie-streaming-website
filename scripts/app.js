@@ -149,6 +149,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const nextButton = document.querySelector("#"+carouselID+"-next");
         const prevButton = document.querySelector("#"+carouselID+"-prev");
+        let currentTranslation = 0;
+
         if (slides.length <= visibleSlides) {
             nextButton.classList.add("hidden");
             prevButton.classList.add("hidden");
@@ -158,7 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 let maxIterations = Math.abs(visibleSlides - totalSlides);
                 let currentIteration = 0;
                 let intervalId = setInterval(() => {
-                    nextButton.click(); // Trigger the click event on the button
+                    nextSlide();
+                    updateButtons();
                     currentIteration++;
 
                     if (currentIteration >= maxIterations) {
@@ -168,11 +171,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 intervals.push(intervalId);
             }
 
-            let currentTranslation = 0;
-            nextButton.addEventListener('click', () => {
-                for (let i = 0; i < intervals; i++) {
-                    clearInterval(intervals[i]);
-                }
+
+            function nextSlide() {
                 if (bodyDirection === "rtl") {
                     if (currentTranslation < (totalWidthPercentage - slideWidthPercentage * visibleSlides)) {
                         currentTranslation += slideWidthPercentage;
@@ -190,13 +190,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         carousel.style.transform = `translateX(${currentTranslation}%)`;
                     }
                 }
-                updateButtons();
-            });
+            }
 
-            prevButton.addEventListener('click', () => {
-                for (let i = 0; i < intervals; i++) {
-                    clearInterval(intervals[i]);
-                }
+            function prevSlide() {
                 const translateValue = slideWidthPercentage;
                 if (bodyDirection === "rtl") {
                     if (currentTranslation > 0) {
@@ -215,6 +211,21 @@ document.addEventListener('DOMContentLoaded', function () {
                         carousel.style.transform = `translateX(${currentTranslation}%)`;
                     }
                 }
+            }
+
+            nextButton.addEventListener('click', () => {
+                for (let i = 0; i < intervals; i++) {
+                    clearInterval(intervals[i]);
+                }
+                nextSlide();
+                updateButtons();
+            });
+
+            prevButton.addEventListener('click', () => {
+                for (let i = 0; i < intervals; i++) {
+                    clearInterval(intervals[i]);
+                }
+                prevSlide();
                 updateButtons();
             });
 
