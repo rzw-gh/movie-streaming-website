@@ -1,12 +1,10 @@
-Anime, Movie Streaming website
+# Anime, Movie Streaming website
 
-Developed using Tailwindcss
+this is a web application built using Tailwindcss
 
-[Live Preview](https://rzw-gh.github.io/stream/home.html)
+[See Live Preview](https://rzw-gh.github.io/movie-streaming-website/home.html)
 
+## TODO:
 
-TODO:
-
-add search, profile, about pages
-
-responsive detail, subscription, watch-list pages
+- add search, profile, about pages
+- responsive detail, subscription, watch-list pages
