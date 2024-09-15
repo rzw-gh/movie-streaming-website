@@ -8,3 +8,5 @@ this is a web application built using Tailwindcss
 
 - add search, profile, about pages
 - responsive detail, subscription, watch-list pages
+
+tailwindcss config js files not added because this is only a private showcase project
