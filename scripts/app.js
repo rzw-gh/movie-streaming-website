@@ -120,11 +120,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const carousels = document.querySelectorAll('.af-carousel');
         carousels.forEach((carousel, index) => {
             let carouselID = carousel.getAttribute('data-carousel')
-            initiateSingleSlider(carousel, carouselID, index);
+            let autoSlideInterval = carousel.hasAttribute('data-auto-slide') ? carousel.getAttribute('data-auto-slide') : null;
+            initiateSingleSlider(carousel, carouselID, index, autoSlideInterval);
         });
     }
 
-    function initiateSingleSlider(carousel, carouselID, index) {
+    function initiateSingleSlider(carousel, carouselID, index, autoSlideInterval) {
         const bodyDirection = document.documentElement.getAttribute('dir');
         const slides = carousel.children;
         let slidesGap;
@@ -152,15 +153,32 @@ document.addEventListener('DOMContentLoaded', function () {
             nextButton.classList.add("hidden");
             prevButton.classList.add("hidden");
         } else {
+            let intervals = [];
+            if (autoSlideInterval) {
+                let maxIterations = Math.abs(visibleSlides - totalSlides);
+                let currentIteration = 0;
+                let intervalId = setInterval(() => {
+                    nextButton.click(); // Trigger the click event on the button
+                    currentIteration++;
+
+                    if (currentIteration >= maxIterations) {
+                        clearInterval(intervalId);
+                    }
+                }, parseInt(autoSlideInterval) * 1000);
+                intervals.push(intervalId);
+            }
+
             let currentTranslation = 0;
             nextButton.addEventListener('click', () => {
+                for (let i = 0; i < intervals; i++) {
+                    clearInterval(intervals[i]);
+                }
                 if (bodyDirection === "rtl") {
                     if (currentTranslation < (totalWidthPercentage - slideWidthPercentage * visibleSlides)) {
                         currentTranslation += slideWidthPercentage;
                         if (currentTranslation > (totalWidthPercentage - slideWidthPercentage * visibleSlides)) {
                             currentTranslation = (totalWidthPercentage - slideWidthPercentage * visibleSlides);
                         }
-                        console.log(currentTranslation)
                         carousel.style.transform = `translateX(${currentTranslation}%)`;
                     }
                 } else {
@@ -176,6 +194,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             prevButton.addEventListener('click', () => {
+                for (let i = 0; i < intervals; i++) {
+                    clearInterval(intervals[i]);
+                }
                 const translateValue = slideWidthPercentage;
                 if (bodyDirection === "rtl") {
                     if (currentTranslation > 0) {
