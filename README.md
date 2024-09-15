@@ -8,4 +8,5 @@ Developed using Tailwindcss
 TODO:
 
 add search, profile, about pages
+
 responsive detail, subscription, watch-list pages
