@@ -3,6 +3,7 @@
 this is a web application built using Tailwindcss
 
 [See Live Preview](https://rzw-gh.github.io/movie-streaming-website/home.html)
+[Figma Design]([https://rzw-gh.github.io/movie-streaming-website/home.html](https://www.figma.com/community/file/1391040906343888719/anime-movie-streaming-website-persian))
 
 ## TODO:
 
